@@ -1,0 +1,17 @@
+
+/* General Changes */
+li {
+  list-style-type: none;
+  text-align: left;
+  }
+
+.center {text-align: center;}
+
+/* Layout */
+.about-section {height: 270px;}
+
+.red {color: red;}
+
+.done-true {color:black;}
+
+.done-false {color: grey;}
