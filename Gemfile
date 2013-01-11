@@ -8,6 +8,7 @@ gem "slim", "~> 1.3.4"
 
 gem "mongo_mapper", "~> 0.12.0"
 
+gem "bson", "~> 1.8.1"
 
 gem "bson_ext", "~> 1.8.1"
 

@@ -15,7 +15,7 @@ context "home page" do
 
   it "should display header" do
     get '/'
-    last_response.body.should include("Mongo Sandbox")
+    last_response.body.should include("")
   end
 
 
@@ -23,35 +23,35 @@ context "home page" do
 
 end
 
-context "new movie" do
+context "new document" do
 
   it "page should display header" do
     get '/new'
-    last_response.body.should include ("New Movie")
+    last_response.body.should include ("New document")
   end
 end
 
-context "show movie" do
+context "show document" do
 
   it "page should display header" do
     get '/new'
-    last_response.body.should include ("New Movie")
+    last_response.body.should include ("New document")
   end
 end
 
-context "destroy movie" do
+context "destroy document" do
 
   it "page should display header" do
     get '/new'
-    last_response.body.should include ("New Movie")
+    last_response.body.should include ("New document")
   end
   end
 
-context "edit movie" do
+context "edit document" do
 
   it "page should display header" do
     get '/new'
-    last_response.body.should include ("New Movie")
+    last_response.body.should include ("New document")
   end
 end
 
