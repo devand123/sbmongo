@@ -1,17 +1,24 @@
 #Required Gems
+#=============
+
 require 'sinatra'
 
 
-#Setting up the Database
-db = MongoClient.new("localhost", 9292).db("simpleenglish")
+
+#Configuration
+#=============
+
+MongoMapper.database = 'simpleenglish'
 
 
-#Mapping out our DB
 
-#NAMING GUIDELINES
-#=================
-#1) Underscores used for naming Fields
-#2) Uppercase Camel Case for naming collections
+#Mapping out our DB/Schema
+#==========================
+
+  #NAMING GUIDELINES
+  #=================
+  #1) Underscores used for naming Fields
+  #2) Uppercase Camel Case for naming collections
 
 
 class Document
@@ -41,36 +48,41 @@ class User
   key :ip_address, Integer
   timestamps!
 
-
-
 end
 
 
 
 #Routes Section
+#==============
+
   get '/' do
-    @documents.Document.all
+    @documents = Document.all
     slim :index
   end
 
   get '/:id/edit' do
     @documents = Document.all
     @document = Document.find(params[:id])
-    erb :edit
+    slim :edit
   end
 
-  post '/new' do
+  get '/new' do
+    #document = Document.new
+    slim :new
+  end
+
+  post '/create' do
+
     document = Document.new
     document.title = (params[:title])
     document.body = (params[:body])
     document.author = (params[:author])
 
-    if Document.save
+    if document.save
       status 201
     else
       status 401
     end
-
     redirect '/'
   end
 
@@ -91,7 +103,7 @@ end
   get '/:id/delete' do
     @documents = Document.all
     @document = Document.find(params[:id])
-    erb :delete
+    slim :delete
   end
 
   delete '/:id/delete' do
