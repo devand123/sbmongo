@@ -29,7 +29,6 @@ class Document
   key :body, String
   key :author, String
   key :number_of_edits, Integer
-  key :last_edit, Time
   timestamps!
 
 
@@ -60,7 +59,7 @@ end
     slim :index
   end
 
-  get '/:id/edit' do
+  get '/edit/:id' do
     @documents = Document.all
     @document = Document.find(params[:id])
     slim :edit
@@ -86,9 +85,12 @@ end
     redirect '/'
   end
 
-  put '/:id/update' do
+  put '/update/:id' do
     document = Document.find(params[:id])
     document.title = (params[:title])
+    document.body = (params[:body])
+    document.author = (params[:author])
+    document.number_of_edits += 1
 
     if Document.save
       status 201
@@ -100,13 +102,7 @@ end
 
   end
 
-  get '/:id/delete' do
-    @documents = Document.all
-    @document = Document.find(params[:id])
-    slim :delete
-  end
-
-  delete '/:id/delete' do
-    document.find(params[:id]).destroy
+  delete '/delete/:id' do
+    Document.find(params[:id]).destroy
     redirect '/'
   end

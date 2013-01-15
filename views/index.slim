@@ -1,7 +1,17 @@
-div.row 
+div.row
   h3 List of all Documents
 
-- @documents.map do |document|
-  = document.title
+  div.five.columns
+    - @documents.map do |document|
+      br
+      label Title: #{document.title}
+      br
 
-    
+      label Body: #{document.body}
+      br
+
+      label Author: #{document.author}
+      br
+      form method="post" action="delete/#{document.id}"
+        input name="_method" value="delete" rel="nofollow" type="hidden"
+        input.button.alert type="submit" value="Delete"
