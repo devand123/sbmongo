@@ -25,10 +25,10 @@ class Document
 
   include MongoMapper::Document
 
-  key :title, String
-  key :body, String
-  key :author, String
-  key :number_of_edits, Integer
+  key :title, String, :required => true
+  key :body, String, :required => true
+  key :author, String, :required => true
+  key :number_of_edits, Integer, :required => true
   timestamps!
 
 
@@ -53,11 +53,6 @@ end
 
 #Routes Section
 #==============
-
-
-  before do
-
-  end
 
   get '/' do
     @documents = Document.all

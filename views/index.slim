@@ -1,4 +1,8 @@
 div.row
+  h1 Simple English
+  hr
+
+div.row
   h3 List of all Documents
 
 div.row
@@ -16,6 +20,8 @@ div.row
       label Author: #{document.author}
       br
       label Contributions: #{document.number_of_edits}
+      br
+      label Last Updated at: #{document.updated_at}
       a.round.button href="/edit/#{document.id}" Edit
       br
       br
