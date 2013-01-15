@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5cdac81-034c-40ba-bfa0-bd776641cca5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/delete.slim" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.rb" afterPath="$PROJECT_DIR$/main.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/edit.slim" afterPath="$PROJECT_DIR$/views/edit.slim" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.slim" afterPath="$PROJECT_DIR$/views/index.slim" />
@@ -33,7 +31,7 @@
       <file leaf-file-name="index.slim" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/index.slim">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="39" selection-start="190" selection-end="190" vertical-scroll-proportion="-7.04">
+            <state line="19" column="82" selection-start="448" selection-end="519" vertical-scroll-proportion="-12.16">
               <folding />
             </state>
           </provider>
@@ -42,25 +40,25 @@
       <file leaf-file-name="new.slim" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/new.slim">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="32" selection-end="347" vertical-scroll-proportion="-1.92">
+            <state line="16" column="0" selection-start="296" selection-end="369" vertical-scroll-proportion="-10.24">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.slim" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="edit.slim" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/edit.slim">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="44" selection-start="62" selection-end="62" vertical-scroll-proportion="-1.28">
+            <state line="16" column="2" selection-start="436" selection-end="436" vertical-scroll-proportion="0.30082256">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="15" selection-start="1459" selection-end="1459" vertical-scroll-proportion="0.70776254">
+            <state line="109" column="50" selection-start="1740" selection-end="1740" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -87,10 +85,10 @@
         <option value="$PROJECT_DIR$/spec/controller/main_controller_spec.rb" />
         <option value="$PROJECT_DIR$/views/delete.slim" />
         <option value="$PROJECT_DIR$/config.ru" />
-        <option value="$PROJECT_DIR$/views/new.slim" />
         <option value="$PROJECT_DIR$/views/index.slim" />
-        <option value="$PROJECT_DIR$/views/edit.slim" />
+        <option value="$PROJECT_DIR$/views/new.slim" />
         <option value="$PROJECT_DIR$/main.rb" />
+        <option value="$PROJECT_DIR$/views/edit.slim" />
       </list>
     </option>
   </component>
@@ -335,7 +333,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961375" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18540773" sideWeight="0.670354" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18540773" sideWeight="0.99885845" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -463,30 +461,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/new.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="32" selection-end="347" vertical-scroll-proportion="-1.92">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="39" selection-start="190" selection-end="190" vertical-scroll-proportion="-7.04">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/edit.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="44" selection-start="62" selection-end="62" vertical-scroll-proportion="-1.28">
+        <state line="19" column="82" selection-start="448" selection-end="519" vertical-scroll-proportion="-12.16">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="15" selection-start="1459" selection-end="1459" vertical-scroll-proportion="0.70776254">
+        <state line="109" column="50" selection-start="1740" selection-end="1740" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/new.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="296" selection-end="369" vertical-scroll-proportion="-10.24">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/edit.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="2" selection-start="436" selection-end="436" vertical-scroll-proportion="0.30082256">
           <folding />
         </state>
       </provider>

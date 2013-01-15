@@ -54,6 +54,11 @@ end
 #Routes Section
 #==============
 
+
+  before do
+
+  end
+
   get '/' do
     @documents = Document.all
     slim :index
@@ -69,7 +74,7 @@ end
   end
 
   post '/create' do
-
+    error 401 unless params[:auth_token] =~ /^xyz/
     document = Document.new
     document.title = (params[:title])
     document.body = (params[:body])
@@ -84,6 +89,7 @@ end
   end
 
   put '/update/:id' do
+    error 401 unless params[:auth_token] =~ /^xyz/
     document = Document.find(params[:id])
     document.title = (params[:title])
     document.body = (params[:body])
@@ -101,6 +107,7 @@ end
   end
 
   delete '/delete/:id' do
+    error 401 unless params[:auth_token] =~ /^xyz/
     Document.find(params[:id]).destroy
     redirect '/'
   end
