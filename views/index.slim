@@ -1,6 +1,9 @@
 div.row
   h3 List of all Documents
 
+div.row
+  a href="/new" Add a Document
+
   div.five.columns
     - @documents.map do |document|
       br
@@ -12,6 +15,7 @@ div.row
 
       label Author: #{document.author}
       br
+      label Contributions: #{document.number_of_edits}
       a.round.button href="/edit/#{document.id}" Edit
       br
       br

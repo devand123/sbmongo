@@ -32,7 +32,7 @@ class Document
   timestamps!
 
 
-  attr_accessible :title, :body, :author
+  attr_accessible :title, :body, :author, :number_of_edits
 
 end
 
@@ -79,6 +79,7 @@ end
     document.title = (params[:title])
     document.body = (params[:body])
     document.author = (params[:author])
+    document.number_of_edits = 1
 
     if document.save
       status 201
@@ -94,7 +95,7 @@ end
     document.title = (params[:title])
     document.body = (params[:body])
     document.author = (params[:author])
-    #document.number_of_edits += 1
+    document.number_of_edits += 1
 
     if document.save
       status 201
