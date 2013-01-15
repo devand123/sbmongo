@@ -1,1 +1,17 @@
 h3 Edit Document
+
+form.row accept-charset="UTF-8" action="/update/#{@document.id}" method="post"
+  label Title
+  br
+  input.five name="title" type="text" value="#{@document.title}"
+  br
+  label Body
+  br
+  textarea.twelve rows="10" name="body" type="text" placeholder="#{@document.body}"
+  br
+  label Author
+  br
+  input.five name="author" type="text" value="#{@document.author}"
+  br
+  input name="_method" type="hidden" value="put"
+  input.button.success type="submit" value="Make Edit"

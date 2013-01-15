@@ -1,10 +1,17 @@
-h3 Create a Document
+div.row
+  h3 Create a Document
 
 form.row accept-charset="UTF-8" action="/create" method="post"
-  label.two.columns Title
-  input.four.columns name="title" type="text"
+  label Title
+  br
+  input.five name="title" type="text"
+  br
   label Body
-  input name="body" type="text"
+  br
+  textarea.twelve rows="10" name="body" type="text"
+  br
   label Author
-  input name="author" type="text"
-  input type="submit" value="Submit"
+  br
+  input.five name="author" type="text"
+  br
+  input.button.success type="submit" value="Submit"

@@ -60,13 +60,11 @@ end
   end
 
   get '/edit/:id' do
-    @documents = Document.all
     @document = Document.find(params[:id])
     slim :edit
   end
 
   get '/new' do
-    #document = Document.new
     slim :new
   end
 
@@ -90,9 +88,9 @@ end
     document.title = (params[:title])
     document.body = (params[:body])
     document.author = (params[:author])
-    document.number_of_edits += 1
+    #document.number_of_edits += 1
 
-    if Document.save
+    if document.save
       status 201
     else
       status 401

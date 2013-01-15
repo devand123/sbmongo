@@ -12,6 +12,9 @@ div.row
 
       label Author: #{document.author}
       br
+      a.round.button href="/edit/#{document.id}" Edit
+      br
+      br
       form method="post" action="delete/#{document.id}"
         input name="_method" value="delete" rel="nofollow" type="hidden"
-        input.button.alert type="submit" value="Delete"
+        input.round.button.alert type="submit" value="Delete"
