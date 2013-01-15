@@ -41,10 +41,6 @@ class User
   include MongoMapper::Document
 
   key :user_id, String
-  key :document_id, Integer
-  key :number_of_chars_changed, Integer
-  key :number_of_docs_changed, Integer
-  key :ip_address, Integer
   timestamps!
 
 end
@@ -70,12 +66,26 @@ end
 
   post '/create' do
     error 401 unless params[:auth_token] =~ /^xyz/
+
+    #Injecting Document Attributes into new Document
     document = Document.new
     document.title = (params[:title])
     document.body = (params[:body])
     document.author = (params[:author])
     document.number_of_edits = 1
 
+    #Saving User
+    unless user = User.find(request.env['REMOTE_ADDR'].split(',').first)
+      user = User.new
+      user.user_id = request.env['REMOTE_ADDR'].split(',').first
+      if user.save
+        status 202
+      else
+        status 401
+      end
+    end
+
+    #Saving Document
     if document.save
       status 201
     else

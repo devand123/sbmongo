@@ -4,7 +4,8 @@ div.row
 
 div.row
   h3 List of all Documents
-
+  - @users.map do |user|
+    div hello #{user.user_id}
 div.row
   a href="/new" Add a Document
 
