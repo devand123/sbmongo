@@ -12,6 +12,7 @@ MongoMapper.database = 'simpleenglish'
 
 
 
+
 #Mapping out our DB/Schema
 #==========================
 
@@ -48,7 +49,6 @@ class User
 end
 
 
-
 #Helpers Section
 #===============
 first_name = ["slick", "windy", "velvet", "micro"]
@@ -64,16 +64,7 @@ end
 #Routes Section
 #==============
 
-  before do
-    @remote_ip =  request.env['REMOTE_ADDR'].split(',').first
-    current_user = User.find(@remote_ip)
-    @current_user = current_user
-    if current_user
-      @user_name = current_user.name
-    else
-      @user_name = "Anonymous"
-    end
-  end
+enable :sessions
 
   get '/' do
     @users = User.all
@@ -90,10 +81,31 @@ end
     slim :edit
   end
 
-
+  get '/login' do
+    session[:remote_ip] =  request.env['REMOTE_ADDR'].split(',').first
+    user = User.find({user_id: session[:remote_ip]})
+    if user_name.nil?
+      user = User.new
+      user.user_id = session[:remote_ip]
+      user.name = first_name.sample + "-" + second_name.sample + "-" + session[:remote_ip]
+      if user.save
+        session[:user_name] = user.name
+        status 202
+      else
+        status 401
+      end
+    else
+      session[:user_name] = user.name
+    end
+    redirect '/'
+  end
 
   get '/new' do
-    slim :new
+    if session[:user_name].nil?
+      redirect '/login'
+    else
+      slim :new
+    end
   end
 
 
@@ -102,15 +114,8 @@ end
 
     token_from_form_verified()
 
-    unless @current_user
-      user = User.new
-      user.user_id = @remote_ip
-      user.name = first_name.sample + "-" + second_name.sample + "-" + @remote_ip
-      if user.save
-        status 202
-      else
-        status 401
-      end
+    if session[:user_name].nil?
+      redirect '/login'
     end
 
     #Injecting Document Attributes into new Document
@@ -119,7 +124,7 @@ end
     document.body = (params[:body]).split(".")
     document.author = (params[:author])
     document.number_of_edits = 1
-    document.contributor_ids = user.name
+    document.contributor_ids = session[:remote_ip]
 
     #Saving Document
     if document.save
@@ -136,15 +141,9 @@ end
 
     token_from_form_verified()
 
-    unless @current_user
-      user = User.new
-      user.user_id = @remote_ip
-      user.name = first_name.sample + "-" + second_name.sample + "-" + @remote_ip
-      if user.save
-        status 202
-      else
-        status 401
-      end
+
+    if session[:user_name].nil?
+      redirect '/login'
     end
 
     document = Document.find( params[:id] )
@@ -152,7 +151,7 @@ end
     document.body = ( params[:body] )
     document.author = ( params[:author] )
     document.number_of_edits += 1
-    document.add_to_set( :contributor_ids => user.name )
+    document.add_to_set( :contributor_ids => session[:remote_ip] )
 
     if document.update_attributes!
       status 201
