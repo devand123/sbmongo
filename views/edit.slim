@@ -2,20 +2,23 @@ div.row
   h3 Edit Document
 
 
+div.row
+  form.row.six.columns accept-charset="UTF-8" action="/update/#{@document.id}" method="post"
+    label Title
+    br
+    input.twelve name="title" type="text" value="#{@document.title}"
+    br
+    label Body
+    br
+    input.twelve rows="10" name="body" type="text" value="#{@body}"
+    br
+    label Author
+    br
+    input.twelve name="author" type="text" value="#{@document.author}"
+    br
+    input name="_method" type="hidden" value="put"
+    input type="hidden" name="auth_token" value="xyzasdflj-asdfawwerqgaef="
+    input.button.success type="submit" value="Make Edit"
 
-form.row accept-charset="UTF-8" action="/update/#{@document.id}" method="post"
-  label Title
-  br
-  input.five name="title" type="text" value="#{@document.title}"
-  br
-  label Body
-  br
-  input.twelve rows="10" name="body" type="text" value="#{@body}"
-  br
-  label Author
-  br
-  input.five name="author" type="text" value="#{@document.author}"
-  br
-  input name="_method" type="hidden" value="put"
-  input type="hidden" name="auth_token" value="xyzasdflj-asdfawwerqgaef="
-  input.button.success type="submit" value="Make Edit"
+
+  h6.row.six.columns hello tere
