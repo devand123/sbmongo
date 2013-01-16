@@ -84,7 +84,7 @@ enable :sessions
   get '/login' do
     session[:remote_ip] =  request.env['REMOTE_ADDR'].split(',').first
     user = User.find({user_id: session[:remote_ip]})
-    if user_name.nil?
+    if user.nil?
       user = User.new
       user.user_id = session[:remote_ip]
       user.name = first_name.sample + "-" + second_name.sample + "-" + session[:remote_ip]

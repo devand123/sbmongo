@@ -1,8 +1,9 @@
 div.row
-  h3 List of all Documents
-div.row
-  a href="/new" Add a Document
+  h3.six.columns List of all Documents
+  h3.six.columns
+    a href="/new" Add a Document
 
+div.row
   div.five.columns
     - @documents.map do |document|
       br
@@ -30,7 +31,11 @@ div.row
         input type="hidden" name="auth_token" value="xyzasdflj-asdfawwerqgaef="
         input.round.button.alert type="submit" value="Delete"
 
-  div.five.columns
-    -@users.map do |user|
-      label #{user.user_id}
-      label #{user.name}
+
+div.row
+  h2.twelve.centered Start By Making English Simplier
+div.row
+  h6.twelve This is a test baby
+div.row
+  textarea.twelve
+
