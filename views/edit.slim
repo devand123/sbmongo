@@ -1,4 +1,7 @@
-h3 Edit Document
+div.row
+  h3 Edit Document
+
+
 
 form.row accept-charset="UTF-8" action="/update/#{@document.id}" method="post"
   label Title
@@ -7,7 +10,7 @@ form.row accept-charset="UTF-8" action="/update/#{@document.id}" method="post"
   br
   label Body
   br
-  textarea.twelve rows="10" name="body" type="text" placeholder="#{@document.body}"
+  input.twelve rows="10" name="body" type="text" value="#{@body}"
   br
   label Author
   br

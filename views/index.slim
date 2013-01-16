@@ -1,11 +1,5 @@
 div.row
-  h1 Simple English
-  hr
-
-div.row
   h3 List of all Documents
-  - @users.map do |user|
-    div hello #{user.user_id}
 div.row
   a href="/new" Add a Document
 
@@ -15,18 +9,28 @@ div.row
       label Title: #{document.title}
       br
 
-      label Body: #{document.body}
+      label Body: #{document.body.join(".") + "."}
       br
 
       label Author: #{document.author}
       br
+
       label Contributions: #{document.number_of_edits}
       br
-      label Last Updated at: #{document.updated_at}
+
+      label Last Updated at: #{document.updated_at.to_s(:rfc822)}
       a.round.button href="/edit/#{document.id}" Edit
       br
+
+      label Contributors: #{document.contributor_ids.join(", ")}
+
       br
       form method="post" action="delete/#{document.id}"
         input name="_method" value="delete" rel="nofollow" type="hidden"
         input type="hidden" name="auth_token" value="xyzasdflj-asdfawwerqgaef="
         input.round.button.alert type="submit" value="Delete"
+
+  div.five.columns
+    -@users.map do |user|
+      label #{user.user_id}
+      label #{user.name}

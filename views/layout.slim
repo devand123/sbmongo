@@ -16,6 +16,11 @@ doctype html
     
     /[if lt IE 9]
       script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"
+  div.row
+    h1 Simple English
+    h3 #{ "Welcome, " + @user_name }
+    hr
+
   body
 
     == yield
