@@ -30,10 +30,16 @@ class Document
   key :body, Array, :required => true
   key :author, String, :required => true
   key :number_of_edits, Integer, :required => true
-  key :contributor_ids, Array
+  key :contributor_ids, Array, :required => true
   timestamps!
 
   attr_accessible :title, :body, :author, :number_of_edits
+
+  def self.random_document(conditions = {})
+    self.first(:offset => rand(Document.count) )
+  end
+
+
 
 end
 
@@ -55,6 +61,7 @@ enable :sessions
 
   get '/' do
     @documents = Document.all
+    @random = Document.random_document
     slim :index
   end
 
@@ -80,7 +87,6 @@ enable :sessions
     document.author = (params[:author])
     document.number_of_edits = 1
     document.contributor_ids = request.env['REMOTE_ADDR'].split(',').first
-
     #Saving Document
     if document.save
       status 201

@@ -35,7 +35,13 @@ div.row
 div.row
   h2.twelve.centered Start By Making English Simplier
 div.row
-  h6.twelve This is a test baby
-div.row
-  textarea.twelve
+  h6.twelve #{@random.body.sample}
+
+form.row accept-charset="UTF-8" action="/update/#{@random.id}" method="post"
+  input type="hidden" name="auth_token" value="xyzasdflj-asdfawwerqgaef="
+  input type="hidden" name="author"  value="#{@random.author}"
+  input type="hidden" name="title"   value="#{@random.title}"
+  input type="hidden" name="_method" value="put"
+  textarea.twelve     name="body"    type="text"
+  input.button.success type="submit" value="Make Edit"
 
