@@ -62,6 +62,8 @@ enable :sessions
   get '/' do
     @documents = Document.all
     @random = Document.random_document
+      @random_body = @random.body.sample
+      @random_body_index = @random.body.index(@random_body)
     slim :index
   end
 
@@ -104,7 +106,11 @@ enable :sessions
 
     document = Document.find( params[:id] )
     document.title = ( params[:title] )
-    document.body = ( params[:body] )
+    unless params[:random_body_index].nil?
+      document.body[params[:random_body_index].to_i] = ( params[:body].split(".") )
+    else
+      document.body = ( params[:body].split(".") )
+    end
     document.author = ( params[:author] )
     document.number_of_edits += 1
     document.add_to_set( :contributor_ids => request.env['REMOTE_ADDR'].split(',').first )
